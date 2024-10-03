@@ -877,7 +877,7 @@ export default class DashAgGrid extends Component {
 
     onSelectionChanged() {
         setTimeout(() => {
-            if (!this.pauseSelections) {
+            if (!this.pauseSelections && !this.state.gridApi.isDestroyed()) {
                 // Flag that the selection event was fired
                 this.selectionEventFired = true;
                 const selectedRows = this.state.gridApi.getSelectedRows();
